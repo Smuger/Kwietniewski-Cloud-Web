@@ -1,7 +1,10 @@
 import React from "react"
-import { PageProps, graphql } from "gatsby"
+import { PageProps, graphql, Link } from "gatsby"
 import SEO from "../components/seo"
-import { Text, Center } from "@chakra-ui/react"
+import { Text, Center, Button, useColorMode } from "@chakra-ui/react"
+import '../styles/styles.css';
+import { ChakraProvider } from "@chakra-ui/react";
+import theme from "./theme";
 
 type DataProps = {
   site: {
@@ -9,14 +12,22 @@ type DataProps = {
   }
 }
 
-const UsingTypescript: React.FC<PageProps<DataProps>> = ({ data, path }) => (
-  <>
-    <SEO title="Welcome" />
-    <Center h='calc(100vh)' bgGradient='linear(to-r, #FFFF5A, #ce8b54)'>
-      <Text color='whiteAlpha.900' fontSize='6xl'>We love poo.</Text>
-    </Center>
-  </>
-)
+const UsingTypescript: React.FC<PageProps<DataProps>> = ({ data, path }) => {
+
+  return (
+    <ChakraProvider theme={theme}>
+      <SEO title="Kwietniewski" />
+      <Center h='calc(100vh)' >
+
+        <Button colorScheme='whiteAlpha' variant='ghost'>
+          <Link to="/tummy-tracker/privacy">
+            <Text color='whiteAlpha.900' fontSize='3xl'>Tummy Tracker</Text>
+          </Link>
+        </Button>
+      </Center>
+    </ChakraProvider>
+  )
+}
 
 export default UsingTypescript
 
