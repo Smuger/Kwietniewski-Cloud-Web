@@ -1,7 +1,15 @@
 import React from 'react';
 import { Breadcrumb, BreadcrumbItem, BreadcrumbLink, Flex, Link, Text } from '@chakra-ui/react';
+import { useStaticQuery, graphql } from "gatsby"
 
-const Header: React.FC = () => {
+interface SEOProps {
+    title: string
+}
+
+const Header = (props: SEOProps) => {
+    const defaultTitle = props.title
+    const formattedDefaultTitle = "/tummy-tracker/" + defaultTitle
+
     return (
         <Flex
             as="header"
@@ -16,13 +24,13 @@ const Header: React.FC = () => {
                     <BreadcrumbLink href='/'>home</BreadcrumbLink>
                 </BreadcrumbItem>
                 <BreadcrumbItem>
-                    <BreadcrumbLink>tummy-tracker</BreadcrumbLink>
+                    <BreadcrumbLink href='/tummy-tracker'>tummy-tracker</BreadcrumbLink>
                 </BreadcrumbItem>
                 <BreadcrumbItem>
-                    <BreadcrumbLink>privacy</BreadcrumbLink>
+                    <BreadcrumbLink href={formattedDefaultTitle}>{defaultTitle}</BreadcrumbLink>
                 </BreadcrumbItem>
             </Breadcrumb>
-        </Flex>
+        </Flex >
     );
 };
 
