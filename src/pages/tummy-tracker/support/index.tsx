@@ -24,14 +24,16 @@ const UsingTypescript: React.FC<PageProps<DataProps>> = ({ data, path }) => (
           <Heading size='md' mt={4}>
             Email
           </Heading>
-          <Text fontSize={{ base: "sm", md: "md" }}>
-            If you're encountering any issues or have feedback regarding our app, we're here to help!
+          <Stack spacing={3}>
+            <Text fontSize={{ base: "sm", md: "md" }}>
+              If you're encountering any issues or have feedback regarding our app, we're here to help!
 
-          </Text>
-          <Text>
-            Please don't hesitate to reach out to us via email at tummy.tracker@yahoo.com.
-            Our dedicated team is ready to assist you and ensure your experience with our app is as smooth as possible.
-          </Text>
+            </Text>
+            <Text>
+              Please don't hesitate to reach out to us via email at tummy.tracker@yahoo.com.
+              Our dedicated team is ready to assist you and ensure your experience with our app is as smooth as possible.
+            </Text>
+          </Stack>
         </Box>
       </Stack>
     </Center >

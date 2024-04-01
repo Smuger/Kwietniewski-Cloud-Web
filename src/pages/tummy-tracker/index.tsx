@@ -16,17 +16,18 @@ const UsingTypescript: React.FC<PageProps<DataProps>> = ({ data, path }) => {
     <>
       <SEO title="Kwietniewski" />
       <Center h='calc(100vh)' >
-
-        <Button colorScheme='whiteAlpha' variant='ghost'>
-          <Stack spacing={3}>
+        <Stack spacing={3}>
+          <Button colorScheme='whiteAlpha' variant='ghost'>
             <Link to="/tummy-tracker/privacy">
               <Text mt={4} color='whiteAlpha.900' fontSize='3xl'>Privacy</Text>
             </Link>
+          </Button>
+          <Button colorScheme='whiteAlpha' variant='ghost'>
             <Link to="/tummy-tracker/support">
               <Text mt={4} color='whiteAlpha.900' fontSize='3xl'>Support</Text>
             </Link>
-          </Stack>
-        </Button>
+          </Button>
+        </Stack>
       </Center>
     </>
   )
